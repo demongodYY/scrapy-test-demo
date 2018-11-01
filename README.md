@@ -1,43 +1,17 @@
-# QuotesBot
-This is a Scrapy project to scrape quotes from famous people from http://quotes.toscrape.com ([github repo](https://github.com/scrapinghub/spidyquotes)).
-
-This project is only meant for educational purposes.
 
 
-## Extracted data
 
-This project extracts quotes, combined with the respective author names and tags.
-The extracted data looks like this sample:
+# 测试scrapy爬虫
 
-    {
-        'author': 'Douglas Adams',
-        'text': '“I may not have gone where I intended to go, but I think I ...”',
-        'tags': ['life', 'navigation']
-    }
+## 数据源网站 
+http://quotes.toscrape.com/
 
+## windos下
+    $ pip install pypiwin32
+    https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted 中下载对应 python 版本的 twisted ,然后 
+    $ pip install xx/twisted-xxx.whl
 
 ## Spiders
+    $ pip install scrapy
+    $ scrapy crawl toscrape-xpath -o test1.json
 
-This project contains two spiders and you can list them using the `list`
-command:
-
-    $ scrapy list
-    toscrape-css
-    toscrape-xpath
-
-Both spiders extract the same data from the same website, but `toscrape-css`
-employs CSS selectors, while `toscrape-xpath` employs XPath expressions.
-
-You can learn more about the spiders by going through the
-[Scrapy Tutorial](http://doc.scrapy.org/en/latest/intro/tutorial.html).
-
-
-## Running the spiders
-
-You can run a spider using the `scrapy crawl` command, such as:
-
-    $ scrapy crawl toscrape-css
-
-If you want to save the scraped data to a file, you can pass the `-o` option:
-    
-    $ scrapy crawl toscrape-css -o quotes.json
